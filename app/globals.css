@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: 46 136 255; /* #2e88ff */
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Base typography tweaks */
+@layer base {
+  h1 { @apply text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight; }
+  h2 { @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight; }
+  h3 { @apply text-xl sm:text-2xl font-semibold; }
+  p  { @apply text-slate-600; }
+}
+
+/* Reusable component styles */
+@layer components {
+  .container-px { @apply px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-700; }
+  .btn-secondary { @apply btn border border-slate-300 text-slate-800 hover:bg-slate-100; }
+  .badge { @apply inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm; }
+  .card { @apply rounded-xl border border-slate-200 bg-white/70 backdrop-blur-sm shadow-sm; }
+}
